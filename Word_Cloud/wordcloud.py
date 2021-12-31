@@ -7,7 +7,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
 # open SECH.png
-shape = numpy.array(Image.open("Word_Cloud/img/SECH.png"))
+shape = numpy.array(Image.open("img/SECH.png"))
 
 dirname = path.dirname(__file__) if "__file__" in locals() else os.getcwd()
 
@@ -15,7 +15,7 @@ dirname = path.dirname(__file__) if "__file__" in locals() else os.getcwd()
 text = open(path.join(dirname, "sech_name.txt"), "r", encoding="utf-8").read()
 
 # external font
-font_path = "Word_Cloud/font/Marcha.ttf"
+font_path = "font/Marcha.ttf"
 
 # Define parameter for the wordCloud image
 wordcloud = WordCloud(
@@ -29,6 +29,6 @@ wordcloud = WordCloud(
 plt.imshow(wordcloud, interpolation="bilinear")
 
 # store to file
-wordcloud.to_file("Word_Cloud/img/SECH_mask.png")
+wordcloud.to_file("img/SECH_mask.png")
 plt.axis("off")
 plt.show()
